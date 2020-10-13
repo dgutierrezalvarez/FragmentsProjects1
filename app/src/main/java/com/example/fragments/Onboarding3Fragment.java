@@ -14,23 +14,25 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.fragments.databinding.FragmentOnboarding1Binding;
+import com.example.fragments.databinding.FragmentOnboarding3Binding;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Onboarding1Fragment#} factory method to
+ * Use the {@link Onboarding3Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Onboarding1Fragment extends Fragment {
+public class Onboarding3Fragment extends Fragment {
 
     Button botonSiguiente;
+    Button botonSkip;
     NavController navController;
-    private FragmentOnboarding1Binding binding;
+    private FragmentOnboarding3Binding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return (binding = FragmentOnboarding1Binding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentOnboarding3Binding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
@@ -42,14 +44,14 @@ public class Onboarding1Fragment extends Fragment {
         binding.botonSiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_onboarding1Fragment_to_onboarding2Fragment);
-
+                navController.navigate(R.id.action_onboarding3Fragment_to_onboarding1Fragment);
             }
         });
+
         binding.botonSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_onboarding1Fragment_to_homeFragment);
+                navController.navigate(R.id.action_onboarding3Fragment_to_homeFragment);
             }
         });
     }
